@@ -49,8 +49,63 @@ Päädyin tuohoamaan minion koneen ja luomaan sen uudelleen. Tämä ei kuitenkaa
 
 Tässä vaiheessa en ehtinyt enempää tätä asiaa selvittämään. Joudun jatkamaan siis plautus ajan umpeuduttua, ja toivon saavani tämän kuitenkin tehtyä. Täytynee yrittää vielä uudelleen tuota koneen uudelleen luontia ja selvittää mitä muuta olisi tehtävissä!
 
+Ongelmien jatkuessa jouduin tuhoamaan kummankin virtuaalikoneen ja luomaan ne uudestaan.
+
+Tästä pääsin jatkamaan vasta 6.12.
+
+Eli nyt oli kaksi virtuaalikonetta. Testasin vielä että testi pingi toimii. 
+
+![test ping masterilta minionille]()
+
+Testasin ensiksi yksinkertaisella tiedostolla dockerin toiminnan vielä.
+Testi sisältö näytti siis tältä:
+
+![testidocker]()
+
+Dockerfilessä on määriteltynä siis mikä kuva ladataan (ubuntu), mikä tiedosto luodaan (teksti Testi), sekä millä komennolla tulostetaan teksti.
+
+Rakensin tiedostosta docker imagen. 
+
+![dockerfile build]()
+
+Ajoin testi kontin. 
+
+![run testidocker]()
+
+Tässä vaiheessa olin jo minionillekin asentanut dockerin 'sudo apt-get install docker.io' . Myös tarvittavat riippuvuudet oli asennettuna
+
+![tarvittavat riippuvuudet minionille]()
+
+Käynnistin testi kontin 'sudo salt t002 docker.run name=testi-docker image=ubuntu:latest cmd="echo Testi"'
+Sitten ajoin käynnistys komennon. 
+
+![docker luonti t002 ja start]()
+
+Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopolku, jotta masteri pystyy jakamaan tiedostot minionille.
+
+![fileroots määritelmä]()
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Lähteet:
 
 Karvinen 2024 ; https://terokarvinen.com/palvelinten-hallinta/ 
 Wikipedia, Out of memory : https://en.wikipedia.org/wiki/Out_of_memory
 The kernel's command-line parameters : https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html#vm-oom-kill
+
+https://hub.docker.com/search
+https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.dockermod.html
+https://docs.docker.com/reference/cli/docker/container/create/
+https://docs.saltproject.io/en/latest/topics/tutorials/modules.html
+https://timlwhite.medium.com/the-simplest-way-to-learn-saltstack-cd9f5edbc967
+https://docs.saltproject.io/en/latest/topics/tutorials/docker_sls.html
