@@ -86,17 +86,54 @@ Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopol
 ![fileroots määritelmä](https://github.com/JohannaLap/Oma-moduuli/blob/main/fileroots%20m%C3%A4%C3%A4ritelm%C3%A4.png)
 
 
-Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat.
+Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat. Tässä määriteltiin kontin käynnistys ja mitä halutaan asentaa.
+
+![virallinen dockerfile](https://github.com/JohannaLap/Oma-moduuli/blob/main/virallinen%20dockerfile.png)
 
 ![dockerfile varsinainen](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerfileluonti%20viimeisin.png)
 
-Rakensin docker imagen. 
+Rakensin docker imagen. Imagea rakentaessa komennolla määritellään hakemisto jossa Dockerfile on ja rakennetaan oma_moduuli niminen image.
 
 ![docker image](https://github.com/JohannaLap/Oma-moduuli/blob/main/Screenshot%202024-12-11%20200641.png)
 
+![dockerkuvan rakentaminen](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerkuvan%20rakentaminen.png)
+ 
+Kuvan rakennus ja kontin käynnistys tapahtui seuraavasti. Komennossa määäritellään että kontin nimeksi annetaan oma_moduuli_container ja käytetään aiemmin luotua imagea oma_moduuli. Komento käynnistää kontin taustalla.
+![docker imagen ajaminen](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker%20imagen%20ajaminen.png)
 
 
 
+
+Loin docker3.sls tiedoston, jolla oli tarkoitus hallita docker konttia. 
+
+![docker3sls](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker3sls.png)
+
+Varmistin, että kontti näkyy masterilla. 
+
+![docker kontti](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker%20kontti.png)
+
+Tämän jälkeen testastasin toimiiko homma. Oletuksena siis, että kontti käynnistyy ja docker image luodaan ja että määritellyt ohjelmat imlestyvät minionille.
+
+![stateapply](https://github.com/JohannaLap/Oma-moduuli/blob/main/stateapply.png)
+
+![dockerkontti2](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerkontti2.png)
+
+Testasin vielä että halutut ohjelmat näkyvät minionilla.
+
+![curl minion](https://github.com/JohannaLap/Oma-moduuli/blob/main/curl%20minionissa.png)
+![fzf minion](https://github.com/JohannaLap/Oma-moduuli/blob/main/fzf%20minionilla.png)
+![vim minion](https://github.com/JohannaLap/Oma-moduuli/blob/main/vim%20minionissa.png)
+
+
+Yhteenvetona : 
+- Dockerfileen määriteltiin mitkä ohjelmat halutaan asentaa konttiin. Tässä testattiin vim, curl ja fzf. 
+- docker3.sls :
+    - docker imagen rakennus komennolla docker build -t johon määritellään imagen nimi ja hakemistopolku
+    - kontin luonti ja käynnistys. docker run -d --name johon määritellään juuri rakennetun imagen nimi jota halutaan käyttää
+    - dockerfilen kopiointi masterilta minionille
+ 
+- Lopussa vielä testattiin että halutut ohjelmat näkyivät minionilla.
+ 
 
 
 
