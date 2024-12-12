@@ -92,7 +92,6 @@ Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat. T채ss�
 
 ![virallinen dockerfile](https://github.com/JohannaLap/Oma-moduuli/blob/main/virallinen%20dockerfile.png)
 
-![dockerfile varsinainen](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerfileluonti%20viimeisin.png)
 
 Rakensin docker imagen. Imagea rakentaessa komennolla m채채ritell채채n hakemisto jossa Dockerfile on ja rakennetaan oma_moduuli niminen image.
 
