@@ -92,6 +92,8 @@ Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat.
 
 Rakensin docker imagen. 
 
+![docker image](https://github.com/JohannaLap/Oma-moduuli/blob/main/Screenshot%202024-12-11%20200641.png)
+
 
 
 
