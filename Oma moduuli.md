@@ -55,36 +55,42 @@ Tästä pääsin jatkamaan vasta 6.12.
 
 Eli nyt oli kaksi virtuaalikonetta. Testasin vielä että testi pingi toimii. 
 
-![test ping masterilta minionille]()
+![test ping masterilta minionille](https://github.com/JohannaLap/Oma-moduuli/blob/main/testping%20masterilta%20minionille.png)
 
 Testasin ensiksi yksinkertaisella tiedostolla dockerin toiminnan vielä.
 Testi sisältö näytti siis tältä:
 
-![testidocker]()
+![testidocker](https://github.com/JohannaLap/Oma-moduuli/blob/main/testidocker.png)
 
 Dockerfilessä on määriteltynä siis mikä kuva ladataan (ubuntu), mikä tiedosto luodaan (teksti Testi), sekä millä komennolla tulostetaan teksti.
 
 Rakensin tiedostosta docker imagen. 
 
-![dockerfile build]()
+![dockerfile build](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerfile%20build.png)
 
 Ajoin testi kontin. 
 
-![run testidocker]()
+![run testidocker](https://github.com/JohannaLap/Oma-moduuli/blob/main/run%20testidocker.png)
 
 Tässä vaiheessa olin jo minionillekin asentanut dockerin 'sudo apt-get install docker.io' . Myös tarvittavat riippuvuudet oli asennettuna
 
-![tarvittavat riippuvuudet minionille]()
+![tarvittavat riippuvuudet minionille](https://github.com/JohannaLap/Oma-moduuli/blob/main/tarvittavat%20riippuvuudet%20minionille.png)
 
 Käynnistin testi kontin 'sudo salt t002 docker.run name=testi-docker image=ubuntu:latest cmd="echo Testi"'
 Sitten ajoin käynnistys komennon. 
 
-![docker luonti t002 ja start]()
+![docker luonti t002 ja start](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker%20luonti%20t002%20ja%20start.png)
 
 Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopolku, jotta masteri pystyy jakamaan tiedostot minionille.
 
-![fileroots määritelmä]()
+![fileroots määritelmä](https://github.com/JohannaLap/Oma-moduuli/blob/main/fileroots%20m%C3%A4%C3%A4ritelm%C3%A4.png)
 
+
+Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat.
+
+![dockerfile varsinainen](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerfileluonti%20viimeisin.png)
+
+Rakensin docker imagen. 
 
 
 
