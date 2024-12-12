@@ -72,7 +72,7 @@ Ajoin testi kontin.
 
 ![run testidocker](https://github.com/JohannaLap/Oma-moduuli/blob/main/run%20testidocker.png)
 
-Tässä vaiheessa olin jo minionillekin asentanut dockerin 'sudo apt-get install docker.io' . Myös tarvittavat riippuvuudet oli asennettuna. Dockerin asennus minionille tosiaankin välttämätöntä jotta saadaan masterilta ajettua.
+Tässä vaiheessa olin jo minionillekin asentanut dockerin 'sudo apt-get install docker.io' . Asensin vielä puuttuvat riippuvuudet. Dockerin asennus minionille tosiaankin välttämätöntä jotta saadaan masterilta ajettua.
 
 ![tarvittavat riippuvuudet minionille](https://github.com/JohannaLap/Oma-moduuli/blob/main/tarvittavat%20riippuvuudet%20minionille.png)
 
@@ -81,9 +81,11 @@ Sitten ajoin käynnistys komennon.
 
 ![docker luonti t002 ja start](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker%20luonti%20t002%20ja%20start.png)
 
-Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopolku, jotta masteri pystyy jakamaan tiedostot minionille(oikea hakemisto polku on oltava määriteltynä).
+Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopolku, jotta masteri pystyy jakamaan tiedostot minionille. Tässä siis määrittelin kaksi eri polkua, koska dockeriin liittyvät tiedostot oli tarkoitus säilyttää omassa paikassaan. Samat polut oli masterille määritettynä.
 
-![fileroots määritelmä](https://github.com/JohannaLap/Oma-moduuli/blob/main/fileroots%20m%C3%A4%C3%A4ritelm%C3%A4.png)
+![etcsaltminion](https://github.com/JohannaLap/Oma-moduuli/blob/main/etcsaltminion.png)
+
+![etcsaltmaster](https://github.com/JohannaLap/Oma-moduuli/blob/main/etcsaltmaster.png)
 
 
 Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat. Tässä määriteltiin kontin käynnistys ja mitä halutaan asentaa.
