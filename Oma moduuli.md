@@ -95,7 +95,6 @@ Tein virallisen Dockerfilen jolla oli tarkoitus asentaa halutut ohjelmat. T채ss�
 
 Rakensin docker imagen. Imagea rakentaessa komennolla m채채ritell채채n hakemisto jossa Dockerfile on ja rakennetaan oma_moduuli niminen image.
 
-![docker image](https://github.com/JohannaLap/Oma-moduuli/blob/main/Screenshot%202024-12-11%20200641.png)
 
 ![dockerkuvan rakentaminen](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerkuvan%20rakentaminen.png)
  
