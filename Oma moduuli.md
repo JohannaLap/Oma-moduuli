@@ -57,14 +57,14 @@ Eli nyt oli kaksi virtuaalikonetta. Testasin vielä että testi pingi toimii.
 
 ![test ping masterilta minionille](https://github.com/JohannaLap/Oma-moduuli/blob/main/testping%20masterilta%20minionille.png)
 
-Testasin ensiksi yksinkertaisella tiedostolla dockerin toiminnan vielä.
+Testasin ensiksi yksinkertaisella tiedostolla dockerin toiminnan vielä. Halusin testata tätä aluksi hyvin yksinkertaisella tavalla jotta näen toimiiko.
 Testi sisältö näytti siis tältä:
 
 ![testidocker](https://github.com/JohannaLap/Oma-moduuli/blob/main/testidocker.png)
 
 Dockerfilessä on määriteltynä siis mikä kuva ladataan (ubuntu), mikä tiedosto luodaan (teksti Testi), sekä millä komennolla tulostetaan teksti.
 
-Rakensin tiedostosta docker imagen. 
+Rakensin dockerfilestä docker imagen. 
 
 ![dockerfile build](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerfile%20build.png)
 
@@ -72,7 +72,7 @@ Ajoin testi kontin.
 
 ![run testidocker](https://github.com/JohannaLap/Oma-moduuli/blob/main/run%20testidocker.png)
 
-Tässä vaiheessa olin jo minionillekin asentanut dockerin 'sudo apt-get install docker.io' . Myös tarvittavat riippuvuudet oli asennettuna
+Tässä vaiheessa olin jo minionillekin asentanut dockerin 'sudo apt-get install docker.io' . Myös tarvittavat riippuvuudet oli asennettuna. Dockerin asennus minionille tosiaankin välttämätöntä jotta saadaan masterilta ajettua.
 
 ![tarvittavat riippuvuudet minionille](https://github.com/JohannaLap/Oma-moduuli/blob/main/tarvittavat%20riippuvuudet%20minionille.png)
 
@@ -81,7 +81,7 @@ Sitten ajoin käynnistys komennon.
 
 ![docker luonti t002 ja start](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker%20luonti%20t002%20ja%20start.png)
 
-Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopolku, jotta masteri pystyy jakamaan tiedostot minionille.
+Huomasin testaillessa, että minionin tiedostoon on määriteltävä tiedostopolku, jotta masteri pystyy jakamaan tiedostot minionille(oikea hakemisto polku on oltava määriteltynä).
 
 ![fileroots määritelmä](https://github.com/JohannaLap/Oma-moduuli/blob/main/fileroots%20m%C3%A4%C3%A4ritelm%C3%A4.png)
 
@@ -104,7 +104,7 @@ Kuvan rakennus ja kontin käynnistys tapahtui seuraavasti. Komennossa määärit
 
 
 
-Loin docker3.sls tiedoston, jolla oli tarkoitus hallita docker konttia. 
+Loin docker3.sls tiedoston, jolla oli tarkoitus hallita docker imagen rakennusta ja kontin käynnistystä.
 
 ![docker3sls](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker3sls.png)
 
