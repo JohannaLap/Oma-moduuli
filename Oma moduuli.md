@@ -1,6 +1,6 @@
 ## Oma moduuli
 
-Ajatuksenani oli tehdä ympäristö, jossa olisi hyödyllisiä ohjelmia kuten esim.vim,curl,fzf. Tämä olisi tarkoitus automatisoida, jotta se olisi helposti ohjattavissa salt masterilta minioneille.
+Ajatuksenani oli tehdä ympäristö, jossa olisi hyödyllisiä ohjelmia kuten esim.vim,curl,fzf. Tämä olisi tarkoitus toteuttaa docker konttin avulla, ja sitten saltilla jakaa masterilta minionille.
 
 Olin aiemmin aloittanut testailun dockerilla ja saltilla. 
 
