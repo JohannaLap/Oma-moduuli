@@ -154,3 +154,10 @@ https://docs.docker.com/reference/cli/docker/container/create/
 https://docs.saltproject.io/en/latest/topics/tutorials/modules.html
 https://timlwhite.medium.com/the-simplest-way-to-learn-saltstack-cd9f5edbc967
 https://docs.saltproject.io/en/latest/topics/tutorials/docker_sls.html
+https://docker-curriculum.com/
+https://github.com/saltstack/salt/issues/27237
+https://docs.saltproject.io/en/latest/topics/tutorials/docker_sls.html
+https://github.com/saltstack-formulas/docker-formula
+https://xebia.com/blog/combining-salt-with-docker/
+https://hub.docker.com/
+
