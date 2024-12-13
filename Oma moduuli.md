@@ -98,7 +98,7 @@ Rakensin docker imagen. Imagea rakentaessa komennolla määritellään hakemisto
 
 ![dockerkuvan rakentaminen](https://github.com/JohannaLap/Oma-moduuli/blob/main/dockerkuvan%20rakentaminen.png)
  
-Kuvan rakennus ja kontin käynnistys tapahtui seuraavasti. Komennossa määäritellään että kontin nimeksi annetaan oma_moduuli_container ja käytetään aiemmin luotua imagea oma_moduuli. Komento käynnistää kontin taustalla.
+Kontin käynnistys tapahtui seuraavasti. Komennossa määäritellään että kontin nimeksi annetaan oma_moduuli_container ja käytetään aiemmin luotua imagea oma_moduuli. Komento käynnistää kontin taustalla.
 ![docker imagen ajaminen](https://github.com/JohannaLap/Oma-moduuli/blob/main/docker%20imagen%20ajaminen.png)
 
 
